@@ -26,6 +26,7 @@ app.use(
       "http://127.0.0.1:3002",
     ],
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+    optionsSuccessStatus: 200,
   })
 );
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
