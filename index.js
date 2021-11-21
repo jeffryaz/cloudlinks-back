@@ -5,6 +5,14 @@ const cors = require("cors");
 const fs = require("fs");
 const Router = require("./routes/router");
 require("dotenv").config();
+const allowlist = [
+  "https://cloudlinks.site",
+  "http://cloudlinks.site",
+  "https://www.cloudlinks.site",
+  "http://www.cloudlinks.site",
+  "http://localhost:3002",
+  "http://127.0.0.1:3002",
+];
 
 const app = express();
 const logFile = fs.createWriteStream("./log/log-request.log", { flags: "a" });
@@ -15,26 +23,22 @@ app.use(
   )
 );
 app.use(express.json({ limit: "50mb" }));
-app.use(
-  cors({
-    origin: [
-      "https://cloudlinks.site",
-      "http://cloudlinks.site",
-      "https://www.cloudlinks.site",
-      "http://www.cloudlinks.site",
-      "http://localhost:3002",
-      "http://127.0.0.1:3002",
-      "https://cloudlinks.site/",
-      "http://cloudlinks.site/",
-      "https://www.cloudlinks.site/",
-      "http://www.cloudlinks.site/",
-      "http://localhost:3002/",
-      "http://127.0.0.1:3002/",
-    ],
-    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-    optionsSuccessStatus: 200,
-  })
-);
+
+const corsOptionsDelegate = (req, callback) => {
+  let corsOptions;
+
+  let isDomainAllowed = allowlist.indexOf(req.header("Origin")) !== -1;
+
+  if (isDomainAllowed) {
+    // Enable CORS for this request
+    corsOptions = { origin: true };
+  } else {
+    // Disable CORS for this request
+    corsOptions = { origin: false };
+  }
+  callback(null, corsOptions);
+};
+app.use(cors(corsOptionsDelegate));
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(cookieParser());
 app.get("/", function (req, res) {
