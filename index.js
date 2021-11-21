@@ -20,9 +20,12 @@ app.use(
     origin: [
       "https://cloudlinks.site",
       "http://cloudlinks.site",
+      "https://www.cloudlinks.site",
+      "http://www.cloudlinks.site",
       "http://localhost:3002",
       "http://127.0.0.1:3002",
     ],
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
