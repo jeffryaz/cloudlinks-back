@@ -27,6 +27,14 @@ app.use(
     ],
   })
 );
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://cloudlinks.site");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(cookieParser());
 app.get("/", function (req, res) {
