@@ -17,14 +17,8 @@ app.use(
 app.use(express.json({ limit: "50mb" }));
 app.use(
   cors({
-    origin: [
-      "https://cloudlinks.site",
-      "http://cloudlinks.site",
-      "https://www.cloudlinks.site",
-      "http://www.cloudlinks.site",
-      "http://localhost:3002",
-      "http://127.0.0.1:3002",
-    ],
+    origin: "*",
+    allowedHeaders: ["Content-Type"],
   })
 );
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
