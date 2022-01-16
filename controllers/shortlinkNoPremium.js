@@ -3,7 +3,7 @@ const knex = require("../config/config.db");
 const Response = require("../helpers/response");
 const generateUrl = require("../helpers/generateUrl");
 
-const shortlinkNoPremium = {
+const ShortlinkNoPremium = {
   create: async (req, res) => {
     try {
       const { original_link } = req.body;
@@ -12,6 +12,8 @@ const shortlinkNoPremium = {
       let checkUrl = await knex("shortlink")
         .where({
           original_link,
+          premium: false,
+          actived: true,
         })
         .select("id", "new_link", "original_link", "created_at");
       if (checkUrl.length > 0) return Response._.clientOk(res, checkUrl[0]);
@@ -70,6 +72,7 @@ const shortlinkNoPremium = {
       let checkUrl = await knex("shortlink")
         .where({
           new_link,
+          actived: true,
         })
         .select("id", "new_link", "original_link", "created_at");
       if (checkUrl.length === 0)
@@ -80,4 +83,4 @@ const shortlinkNoPremium = {
     }
   },
 };
-module.exports = shortlinkNoPremium;
+module.exports = ShortlinkNoPremium;

@@ -23,6 +23,7 @@ app.use(
       "http://www.cloudlinks.site",
       "http://localhost:3002",
       "http://127.0.0.1:3002",
+      "https://01e0-158-140-161-118.ngrok.io",
     ],
   })
 );

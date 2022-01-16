@@ -1,14 +1,15 @@
+require("dotenv").config();
 const configMailer = {
-    service: 'gmail',
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: {
-        user: 'mrjarcreator@gmail.com',
-        pass: 'rosman123123'
-    }
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  secure: process.env.EMAIL_SECURE,
+  pool: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
+  },
 };
 
-const configFrom = "mrjarcreator@gmail.com";
+const configFrom = process.env.EMAIL_USER;
 
 module.exports = { configMailer, configFrom };

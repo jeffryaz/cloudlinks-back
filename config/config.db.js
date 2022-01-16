@@ -1,11 +1,16 @@
+require("dotenv").config();
 const loggerQuery = require("../helpers/loggerQuery");
+const host = process.env.DB_HOST;
+const user = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
+const database = process.env.DB_NAME;
 const knex = require("knex")({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: "cloudlin_links",
-    password: "@Rosman1998",
-    database: "cloudlin_cloudlink",
+    host,
+    user,
+    password,
+    database,
     port: 5432,
     connectionTimeoutMillis: 5000,
   },

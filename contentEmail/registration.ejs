@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudlinks - Registration</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td style="background-image: url(https://cloudlinks.site/media/bg/background-cloudlinks-login.jpg); background-size: cover; height: 240px; color: #ffffff; background-repeat: no-repeat;">
+                    <div style="max-width: 640px;padding: 0px 20px;margin: 0 auto;">
+                        <img style="height: 100px;" src="https://cloudlinks.site/media/logos/logo-shortlinks-name-200x200.png" alt="Logo" />
+                        <h1 style="color: #03529f; font-size: 34px; padding-bottom: 30px; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Ubuntu','Open Sans','Helvetica Neue',sans-serif; font-weight: 400;">
+                            <% if(location !=null || location !='' || location !=undefined || location=='indonesia' ) { %>
+                            Penyingkat url terbaik Anda
+                            <% }else{ %>
+                            Your best url shortener
+                            <% } %>
+                        </h1>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td>
+                    <div style="max-width: 640px;padding: 0px 20px;margin: 0 auto;">
+                        <p>
+                            <% if(location != null || location != '' || location != undefined || location == 'indonesia') { %>
+                            Pendaftar yang terhormat,<br><br><br>
+                            Terima kasih telah mendaftar di Cloudlinks<br><br>
+                            Silakan klik tautan berikut untuk memverifikasi alamat email Anda. Masa berlaku tautan selama 8 Jam. Jika kadaluarsa Anda dapat mencoba kembali.<br><br>
+                            <a href="<%= link %>" target="_blank">Silakan klik di sini untuk memverifikasi email Anda.</a><br><br>
+                            jika URL di atas tidak berfungsi, salin tautan di bawah ini ke browser web Anda dan Buka.<br><br>
+                            <a href="<%= link %>"
+                                target="_blank"><%= link %></a><br><br><br>
+                            Untuk pertanyaan lebih lanjut, Anda dipersilakan untuk menghubungi kami sebagai berikut rincian:-<br><br>
+                            E-mail: support@cloudlinks.site<br><br>
+                            Jika karena alasan apa pun informasi ini salah, harap hubungi kami dalam waktu 48 jam (sejak email ini dikirim) untuk
+                            memperbaiki kesalahan atau akses ke platform yang diberikan untuk memperbaiki data pribadi Anda. Jika kami tidak
+                            mendengar kabar dari Anda setelah 48 jam, pembaruan kontak akan dilanjutkan seperti biasa.<br><br>
+                            Salam hangat,<br><br>
+                            <img data-emoji="💙" style="height: 1.2em; width: 1.2em; vertical-align: middle;" alt="💙" aria-label="💙"
+                                src="https://fonts.gstatic.com/s/e/notoemoji/14.0/1f499/72.png" loading="lazy">Cloudlinks
+                            <% }else{ %>
+                            Dear Registrant,<br><br><br>
+                            Thank you for registering with Cloudlinks<br><br>
+                            Kindly click on the following link in order to verify your e-mail address. The link is valid for 8 hours. If it expires you can try again.<br><br>
+                            <a href="<%= link %>" target="_blank">Please click here to verify your email.</a><br><br>
+                            if the above URL doesn't work, please copy the below link to your web browser and
+                            Go.<br><br>
+                            <a href="<%= link %>"
+                                target="_blank"><%= link %></a><br><br><br>
+                            For further enquiry, you are welcome to contact us as below details:-<br><br>
+                            E-mail: support@cloudlinks.site<br><br>
+                            If for any reason this information is incorrect, please contact us within 48 hours (from the time this email sent)
+                            to
+                            rectify the error or access to given platform to rectify your personal data. If we did not hear from you after 48
+                            hours,
+                            the contact update will be proceeded as usual.<br><br>
+                            Warm Regards,<br><br>
+                            <img data-emoji="💙" style="height: 1.2em; width: 1.2em; vertical-align: middle;" alt="💙" aria-label="💙"
+                                src="https://fonts.gstatic.com/s/e/notoemoji/14.0/1f499/72.png" loading="lazy">Cloudlinks
+                            <% } %>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr bgcolor="#F2F2F2">
+                <td style="text-align:left;font-size:0.8em" align="left" valign="middle">
+                    <div style="max-width:640px;padding:10px 20px;margin:40px auto">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
